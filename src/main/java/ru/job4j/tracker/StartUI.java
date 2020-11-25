@@ -13,9 +13,14 @@ public class StartUI {
         Tracker tracker = new Tracker();
         tracker.add(item);
         Item foundItem = tracker.findById(1);
-        System.out.println(System.lineSeparator()
-                + "  id: " + foundItem.getId() + System.lineSeparator()
-                + "name: " + foundItem.getName() + System.lineSeparator()
-                + "date: " + foundItem.getCreated().format(formatter));
+        if (foundItem != null) {
+            System.out.println(System.lineSeparator()
+                    + foundItem.getId()
+                    + System.lineSeparator()
+                    + foundItem.getName()
+                    + System.lineSeparator()
+                    + foundItem.getCreated().format(formatter));
+
+        }
     }
 }
