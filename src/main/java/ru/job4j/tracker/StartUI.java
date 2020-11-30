@@ -22,5 +22,6 @@ public class StartUI {
                     + foundItem.getCreated().format(formatter));
 
         }
+        System.out.println(item.toString());
     }
 }
