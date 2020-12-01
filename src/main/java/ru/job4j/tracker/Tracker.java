@@ -46,9 +46,6 @@ public class Tracker {
     }
 
     public boolean replace(int id, Item item) {
-        if (id < 0 || item == null) {
-            return false;
-        }
         int searchId = indexOf(id);
         if (searchId == -1) {
             return false;
@@ -59,14 +56,10 @@ public class Tracker {
     }
 
     public boolean delete(int id) {
-        if (id < 0) {
-            return false;
-        }
         int delIndex = indexOf(id);
         if (delIndex == -1) {
             return false;
         }
-        items[delIndex] = null;
         int startPos = delIndex + 1;
         int length = size - delIndex;
         System.arraycopy(items, startPos, items, delIndex, length);
