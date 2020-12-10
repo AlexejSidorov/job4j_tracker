@@ -23,7 +23,7 @@ public class StartUI {
         }
     }
 
-    private static void editItem(Input input, Tracker tracker) {
+    public static void editItem(Input input, Tracker tracker) {
         int itemId = input.askInt("Enter id of target item:");
         String newItemName = input.askStr("Enter new item name:");
         boolean complete = tracker.replace(itemId, new Item(newItemName));
@@ -34,7 +34,7 @@ public class StartUI {
         }
     }
 
-    private static void deleteItem(Input input, Tracker tracker) {
+    public static void deleteItem(Input input, Tracker tracker) {
         int itemId = input.askInt("Enter id of target item:");
         boolean complete = tracker.delete(itemId);
         if (complete) {
