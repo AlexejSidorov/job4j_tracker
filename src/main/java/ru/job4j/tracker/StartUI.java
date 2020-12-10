@@ -2,7 +2,7 @@ package ru.job4j.tracker;
 
 public class StartUI {
 
-    private static void createItem(Input input, Tracker tracker) {
+    public static void createItem(Input input, Tracker tracker) {
         String name = input.askStr("=== Create a new Item ===="
                 + System.lineSeparator()
                 + "Enter name: ");
