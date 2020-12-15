@@ -16,10 +16,10 @@ public class ShowAllAction implements UserAction {
         out.println("===Show All Items===");
         Item[] foundItems = tracker.findAll();
         if (foundItems.length == 0) {
-            System.out.println("The tracker is empty.");
+            out.println("The tracker is empty.");
         } else {
             for (Item item : foundItems) {
-                System.out.println(item);
+                out.println(item);
             }
         }
         return true;
