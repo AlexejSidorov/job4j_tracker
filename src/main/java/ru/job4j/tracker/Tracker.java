@@ -1,43 +1,42 @@
 package ru.job4j.tracker;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Tracker {
-    private final Item[] items = new Item[100];
+    private final List<Item> items = new ArrayList<>();
     private int ids = 1;
-    private int size = 0;
 
     public Item add(Item item) {
         item.setId(ids++);
-        items[size++] = item;
+        items.add(item);
         return item;
     }
 
     public Item findById(int id) {
         int index = indexOf(id);
-        return index != -1 ? items[index] : null;
+        return index != -1 ? items.get(index) : null;
     }
 
-    public Item[] findByName(String key) {
-        Item[] temp = new Item[size];
-        int tempSize = 0;
-        for (int i = 0; i < size; i++) {
-            if (items[i].getName().equals(key)) {
-                temp[tempSize] = items[i];
-                tempSize++;
+    public List<Item> findByName(String key) {
+        List<Item> temp = new ArrayList<>();
+        for (Item item : items) {
+            if (item.getName().equals(key)) {
+                temp.add(item);
             }
         }
-        return Arrays.copyOf(temp, tempSize);
+        return temp;
     }
 
-    public Item[] findAll() {
-        return Arrays.copyOf(items, size);
+    public List<Item> findAll() {
+        return items;
     }
 
     private int indexOf(int id) {
         int rsl = -1;
-        for (int index = 0; index < size; index++) {
-            if (items[index].getId() == id) {
+        for (int index = 0; index < items.size(); index++) {
+            if (items.get(index).getId() == id) {
                 rsl = index;
                 break;
             }
@@ -51,7 +50,7 @@ public class Tracker {
             return false;
         }
         item.setId(id);
-        items[searchId] = item;
+        items.set(searchId, item);
         return true;
     }
 
@@ -60,11 +59,7 @@ public class Tracker {
         if (delIndex == -1) {
             return false;
         }
-        int startPos = delIndex + 1;
-        int length = size - delIndex;
-        System.arraycopy(items, startPos, items, delIndex, length);
-        items[size - 1] = null;
-        size--;
+        items.remove(delIndex);
         return true;
     }
 }
