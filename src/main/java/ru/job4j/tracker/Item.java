@@ -2,11 +2,12 @@ package ru.job4j.tracker;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.Objects;
 
 import static java.time.LocalDateTime.*;
 
-public class Item {
+public class Item implements Comparable<Item> {
     private int id;
     private String name;
     private LocalDateTime created = now();
@@ -55,5 +56,10 @@ public class Item {
                 ", name='" + name + '\'' +
                 ", created=" + formatter.format(created) +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Item secondItem) {
+        return Integer.compare(this.id, secondItem.id);
     }
 }
