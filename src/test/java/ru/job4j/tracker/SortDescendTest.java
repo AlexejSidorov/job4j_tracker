@@ -22,7 +22,7 @@ public class SortDescendTest {
         Collections.sort(items, new SortAscend());
         List<String> expectedNames = Arrays.asList("2", "3", "4", "5");
         List<String> itemsNames = new ArrayList<>();
-        for(Item item : items){
+        for (Item item : items) {
             itemsNames.add(item.getName());
         }
         Assert.assertEquals(expectedNames, itemsNames);
@@ -39,7 +39,7 @@ public class SortDescendTest {
         Collections.sort(items, new SortDescend());
         List<String> expectedNames = Arrays.asList("5", "4", "3", "2");
         List<String> itemsNames = new ArrayList<>();
-        for(Item item : items){
+        for (Item item : items) {
             itemsNames.add(item.getName());
         }
         Assert.assertEquals(expectedNames, itemsNames);

@@ -7,7 +7,7 @@ public class TrackerSingleFinalEager {
     private TrackerSingleFinalEager() {
     }
 
-    public static Tracker getTracker(){
+    public static Tracker getTracker() {
         return TRACKER;
     }
 }

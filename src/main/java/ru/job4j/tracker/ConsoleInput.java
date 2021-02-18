@@ -6,7 +6,7 @@ public class ConsoleInput implements Input {
 
     @Override
     public String askStr(String question) {
-        if(!question.isEmpty()){
+        if (!question.isEmpty()) {
             System.out.println(question);
         }
         return new Scanner(System.in).nextLine();

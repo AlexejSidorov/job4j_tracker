@@ -4,9 +4,10 @@ public class DeleteAction implements UserAction {
 
     private Output out;
 
-    public DeleteAction(Output out){
+    public DeleteAction(Output out) {
         this.out = out;
     }
+
     @Override
     public String name() {
         return "Delete";
