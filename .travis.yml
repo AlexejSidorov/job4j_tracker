@@ -18,6 +18,8 @@ notifications:
       cobetckoeyxo@mail.ru
     on_success: never # default: change
     on_failure: always # default: always
+
+
 env:
   global:
     - CODECOV_TOKEN="bee2d8c6-354c-4e58-8d0b-14018ce1b73f"
